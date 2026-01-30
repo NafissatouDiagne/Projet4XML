@@ -16,14 +16,19 @@
                     font-family: 'Segoe UI', Arial, sans-serif;
                     
                     color: #e8eaed;
-                   overflow-y: scroll;
+                   
                     }
                     
-                    .container {
+                    .container1 {
                     max-width: 900px;
                     margin: 50px auto;
                     padding: 20px;
+                    
+                    height: 100vh;        
+                    overflow-y: auto;    
+                    overflow-x: hidden; 
                     }
+
                     
                     h2 {
                     font-size: 22px;
@@ -100,7 +105,7 @@
             </head>
             
             <body>
-                <div class="container">
+                <div class="container1">
                     
                     <h2>
                         Résultats pour :
@@ -114,12 +119,14 @@
                                           or contains(contenu, $value)
                                           ]">
                         <div class="result">
-                            <a class="title" href="{lien}" target="_blank">
+                            <a class="title" href="details.html?id={@id}" target="_blank">
                                 <xsl:value-of select="titre"/>
                             </a>
                             
                             <div class="url">
+                                <a href="details.html?id={@id}" target="_blank">
                                 <xsl:value-of select="lien"/>
+                                </a>
                             </div>
                             
                             <div class="contenuu">

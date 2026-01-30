@@ -1,36 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="recherches.xsl"?>
 <articles>
-    <article>
+    <article id="1">
         <titre>Naruto</titre>
         <auteur>Boruto</auteur>
         <date>2023/12/03</date>
+        <image> https://i.pinimg.com/736x/45/d2/16/45d2163f0690ce9f5b657c1516f365f6.jpg</image>
         <contenu>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam repellendus iure, officiis, beatae voluptatum excepturi est provident eos a fuga incidunt, qui deserunt tempore nesciunt? </contenu>
         <lien>https://naruto</lien>
 
     </article>
-    <article>
+    <article id="2">
         <titre>Attack on titan</titre>
         <auteur>Mikassa</auteur>
         <date>2024/01/12</date>
         <contenu>bfufhb hufuef </contenu>
+        <image>https://m.media-amazon.com/images/I/81TGzOj9y3L._AC_UF1000,1000_QL80_.jpg </image>
         <lien>https://attackontitan</lien>
         
     </article>
-    <article>
+    <article id="3">
         <titre>Dragon Ball</titre>
         <auteur>Goku</auteur>
         <date>2024/02/15</date>
         <contenu>sdfghjk</contenu>
+        <image> https://i.pinimg.com/736x/3d/db/e2/3ddbe2c38122e010f0a21b73c1b47cc6.jpg</image>
         <lien>https://dragonball</lien>
 
     </article>
-    <article>
+    <article id="4">
         <titre>Next generation</titre>
         <auteur>Boruto</auteur>
         <date>2023/12/03</date>
         <contenu>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam repellendus iure, officiis, beatae voluptatum excepturi est provident eos a fuga incidunt, qui deserunt tempore nesciunt? </contenu>
-        <lien>https://naruto</lien>
-        
+        <image> https://media.ouest-france.fr/v1/pictures/39b3d7ba37164dfe45e2b714dc833c93-boruto-naruto-next-generations-dessin-anime-manga-programme-tv?width=1260</image>
+        <lien>https://nextgeneration</lien>
     </article>
 </articles>
