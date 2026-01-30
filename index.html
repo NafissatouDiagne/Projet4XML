@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>XML Search Engine</title>
+    <link href="" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: 'Orbitron', sans-serif;
+            background: radial-gradient(circle at top, #1b2735, #090a0f);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        /* Effet etoiles */
+        body::before {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+            animation: moveStars 60s linear infinite;
+           
+        }
+
+        @keyframes moveStars {
+            from { transform: translate(0, 0); }
+            to { transform: translate(500px, 500px); }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            padding: 60px;
+            border-radius: 25px;
+            box-shadow: 0 0 50px rgba(66, 244, 223, 0.3);
+            text-align: center;
+            width: 700px;
+        }
+
+        .logo {
+            font-size: 72px;
+            margin-bottom: 40px;
+            letter-spacing: 5px;
+            
+        }
+
+       
+
+        .sp1 { 
+            color: #4285F4;
+         }
+        .sp2 {
+             color: #ff6b6b;
+             }
+        .sp3 { 
+            color: #42f4df;
+         }
+        .sp4 { 
+            color: white; 
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 18px 25px;
+            font-size: 18px;
+            border-radius: 50px;
+            border: none;
+            outline: none;
+            background: rgba(255,255,255,0.15);
+            color: white;
+            box-shadow: 0 0 20px rgba(66,244,223,0.3);
+        }
+
+        input::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .buttons {
+            margin-top: 35px;
+        }
+
+        button {
+            padding: 15px 45px;
+            font-size: 18px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            font-family: 'Orbitron', sans-serif;
+            color: white;
+            background: linear-gradient(135deg, #42f4df, #4adcf2);
+            
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 45px rgba(66,244,223,0.9);
+        }
+
+        #resultats {
+            margin-top: 40px;
+            text-align: left;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <span class="sp1">X</span>
+            <span class="sp2">M</span>
+            <span class="sp3">L</span>
+            <span class="sp4">Search</span>
+        </div>
+
+        <input type="text" id="search" placeholder=" Rechercher un article, un auteur ou une date">
+
+        <div class="buttons">
+            <button onclick="rechercher()">Rechercher</button>
+        </div>
+
+    </div>
+    <div id="resultats"></div>
+
+<script>
+function rechercher() {
+    const mot = document.getElementById("search").value;
+
+    Promise.all([
+        fetch("articles.xml").then(r => r.text()),
+        fetch("recherches.xsl").then(r => r.text())
+    ]).then(([xmlText, xslText]) => {
+
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(xmlText, "text/xml");
+        const xsl = parser.parseFromString(xslText, "text/xml");
+
+        const proc = new XSLTProcessor();
+        proc.importStylesheet(xsl);
+        proc.setParameter(null, "value", mot);
+
+        const result = proc.transformToFragment(xml, document);
+
+        document.getElementById("resultats").innerHTML = "";
+        document.getElementById("resultats").appendChild(result);
+    });
+}
+</script>
+
+</body>
+</html>

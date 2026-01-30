@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="recherches.xsl"?>
+<articles>
+    <article>
+        <titre>Naruto</titre>
+        <auteur>Boruto</auteur>
+        <date>2023/12/03</date>
+        <contenu>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam repellendus iure, officiis, beatae voluptatum excepturi est provident eos a fuga incidunt, qui deserunt tempore nesciunt? </contenu>
+        <lien>https://naruto</lien>
+
+    </article>
+    <article>
+        <titre>Attack on titan</titre>
+        <auteur>Mikassa</auteur>
+        <date>2024/01/12</date>
+        <contenu>bfufhb hufuef </contenu>
+        <lien>https://attackontitan</lien>
+        
+    </article>
+    <article>
+        <titre>Dragon Ball</titre>
+        <auteur>Goku</auteur>
+        <date>2024/02/15</date>
+        <contenu>sdfghjk</contenu>
+        <lien>https://dragonball</lien>
+
+    </article>
+    <article>
+        <titre>Next generation</titre>
+        <auteur>Boruto</auteur>
+        <date>2023/12/03</date>
+        <contenu>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam repellendus iure, officiis, beatae voluptatum excepturi est provident eos a fuga incidunt, qui deserunt tempore nesciunt? </contenu>
+        <lien>https://naruto</lien>
+        
+    </article>
+</articles>
