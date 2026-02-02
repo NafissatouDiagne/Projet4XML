@@ -140,7 +140,14 @@
 <script>
 function rechercher() {
     const mot = document.getElementById("search").value;
-
+if(mot.trim() === "") {
+        alert("Veuillez entrer un mot-clé pour la recherche.");
+        return;
+    }
+    else if(mot.length==0){
+       //refresh la page
+       location.reload();
+    }
     Promise.all([
         fetch("articles.xml").then(r => r.text()),
         fetch("recherches.xsl").then(r => r.text())

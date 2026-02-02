@@ -75,6 +75,7 @@
                     font-size: 15px;
                     line-height: 1.7;
                     color: #e8eaed;
+                   
                     }
                     
                     .auteurr {
@@ -117,6 +118,7 @@
                                           or contains(auteur, $value)
                                           or contains(date, $value)
                                           or contains(contenu, $value)
+                                          or contains(lien, $value)
                                           ]">
                         <div class="result">
                             <a class="title" href="details.html?id={@id}" target="_blank">
@@ -148,6 +150,7 @@
                                   or contains(auteur, $value)
                                   or contains(date, $value)
                                   or contains(contenu, $value)
+                                  or contains(lien, $value)
                                   ])">
                         <div class="no-result">
                             ❌ Aucun résultat trouvé pour "<xsl:value-of select="$value"/>"
